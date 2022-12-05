@@ -1,0 +1,177 @@
+<html>
+<header>
+  <title>Deploying...</title>
+  <link rel="icon" type="image/x-icon" href="https://fwd.needle.tools/needle-logo-ico">
+
+  <script>
+    setTimeout(function () {
+      location.reload();
+    }, 2000);
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap');
+
+    body {
+      background: #000;
+      font-family: 'Libre Franklin', sans-serif;
+      padding-bottom: 10%;
+      color: #999;
+    }
+
+    a {
+      color: #999;
+      text-decoration: none;
+      padding-bottom: .2em;
+      /* border-bottom: .2em dotted grey; */
+    }
+
+    a:hover {
+      border-bottom: none;
+    }
+
+    body,
+    #center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #center {
+      flex-direction: column;
+    }
+
+    .deployment-info {
+      margin: auto;
+      position: relative;
+      display: block;
+      font-size: 1.6em;
+      padding-top: 2em;
+      text-align: center;
+      position: fixed;
+      bottom: 20%;
+      line-height: 1.5em;
+    }
+
+    #loading-animation {
+      width: 1;
+    }
+
+    #needle-link {
+      position: fixed;
+      display: block;
+      bottom: 1em;
+      right: 2em;
+    }
+
+    #needle-link a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+    }
+
+    #needle-link .icon,
+    #needle-link span {
+      max-height: 1.7em;
+      margin-left: .5em;
+    }
+
+    /* animation start */
+    svg {
+      overflow: visible;
+      width: 100px;
+      height: 150px;
+      margin-left: -50px;
+    }
+
+    svg g {
+      animation: slide 2s linear infinite;
+    }
+
+    svg g:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    svg g:nth-child(2) path {
+      animation-delay: 0.5s;
+      stroke-dasharray: 0px 158px;
+      stroke-dashoffset: 1px;
+    }
+
+    svg path {
+      stroke: url(#gradient);
+      stroke-width: .5em;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 0 1000px;
+      stroke-dashoffset: 0;
+      animation: escalade 2s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateY(-50px);
+      }
+
+      100% {
+        transform: translateY(50px);
+      }
+    }
+
+    @keyframes escalade {
+      0% {
+        stroke-dasharray: 0 157px;
+        stroke-dashoffset: 0;
+      }
+
+      50% {
+        stroke-dasharray: 157px 157px;
+        stroke-dashoffset: 0;
+      }
+
+      100% {
+        stroke-dasharray: 157px 157px;
+        stroke-dashoffset: -156px;
+      }
+    }
+
+    /* animation end */
+  </style>
+</header>
+
+<body>
+  <div id="center">
+
+    <div id="loading-animation">
+      <svg>
+        <g>
+          <path d="M 50,100 A 1,1 0 0 1 50,0" />
+        </g>
+        <g>
+          <path d="M 50,75 A 1,1 0 0 0 50,-25" />
+        </g>
+        <defs>
+          <lineargradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#d5db0d;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#64d295;stop-opacity:1" />
+          </lineargradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="deployment-info">
+      Deployment in progress! 🧰<br />Please stand by 🙏<br />
+    </div>
+
+    <div id="needle-link">
+      <a href="https://www.needle.tools" target="_blank">
+        <img class="icon" src="https://fwd.needle.tools/needle-logo-ico" />
+        <span>needle.tools</span>
+      </a>
+    </div>
+
+  </div>
+</body>
+
+</html>

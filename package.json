@@ -1,0 +1,31 @@
+{
+  "name": "needle-tiny-deploy-to-glitch-template",
+  "version": "0.0.3",
+  "type": "module",
+  "description": "Needle Unity ↦ three.js ↦ glitch deployment template",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "fastify": "^3.29.0",
+    "@fastify/static": "^5.0.0",
+    "@fastify/formbody": "^6.0.0",
+    "@fastify/multipart": "^6.0.0",
+    "@fastify/compress": "^5.0.0",
+    "unzipper": "0.10.11",
+    "@needle-tools/needle-tiny-networking-ws": "^1.1.0-pre",
+    "@needle-tools/needle-tiny-storage": "^1.1.2-pre",
+    "@needle-tools/needle-engine-analytics": "^1.0.5"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "needle",
+    "threejs",
+    "unity",
+    "template"
+  ]
+}
